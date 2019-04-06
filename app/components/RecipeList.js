@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, TouchableHighlight, Text, View } from 'react-native';
 
 class RecipeList extends Component {
 
@@ -8,8 +8,23 @@ class RecipeList extends Component {
   }
 
   renderRecipes = (recipes) => {
+    const { navigate } = this.props.navigation;
     return (
-      recipes.map(recipe => <Text>{ recipe.title }</Text>)
+      <View>
+        {
+          recipes.map((recipe) => {
+            return(
+              <TouchableHighlight
+                key={recipe.id}
+                onPress={() => navigate('RecipeDetailScreen', { recipe: recipe })}
+                underlayColor='#99d9f4'
+              >
+                <Text>{recipe.title}</Text>
+              </TouchableHighlight>
+              )
+            })
+          }
+      </View>
     );
   }
 

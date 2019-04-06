@@ -4,6 +4,7 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import { PersistGate } from 'redux-persist/integration/react'
 import { store, persistor } from './store'
 import RecipeListScreen from './app/containers/RecipeListScreen';
+import RecipeDetailScreen from './app/containers/RecipeDetailScreen';
 
 // supress Yellowbox warnings in DEBUG
 console.disableYellowBox = true;
@@ -24,6 +25,7 @@ export default class App extends Component {
 const Routes = createStackNavigator(
   {
     RecipeListScreen: RecipeListScreen,
+    RecipeDetailScreen: RecipeDetailScreen,
   }
 );
 
