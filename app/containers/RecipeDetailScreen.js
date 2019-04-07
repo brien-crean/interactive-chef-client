@@ -4,7 +4,7 @@ import RecipeDetail from '../components/RecipeDetail';
 
 function mapStateToProps(state) {
   return {
-    recipes: state.recipes.recipes
+    steps: state.recipes.steps
   }
 }
 
